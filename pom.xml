@@ -20,6 +20,8 @@
         <java.version>1.8</java.version>
         <!--DB-->
         <hsqldb.version>2.4.0</hsqldb.version>
+        <!--Telegram starter-->
+        <telegram.version>4.4.0.1</telegram.version>
     </properties>
 
     <dependencies>
@@ -41,6 +43,12 @@
             <groupId>org.hsqldb</groupId>
             <artifactId>hsqldb</artifactId>
             <version>${hsqldb.version}</version>
+        </dependency>
+        <!--Telegram starter-->
+        <dependency>
+            <groupId>org.telegram</groupId>
+            <artifactId>telegrambots-spring-boot-starter</artifactId>
+            <version>${telegram.version}</version>
         </dependency>
     </dependencies>
 
