@@ -2,6 +2,7 @@ package com.quetzalcoatl.otstesttask.bot;
 
 import com.quetzalcoatl.otstesttask.rest.model.City;
 import com.quetzalcoatl.otstesttask.rest.repository.CrudCityRepository;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -13,6 +14,12 @@ import java.util.List;
 @Component
 public class OtsTravelBot extends TelegramLongPollingBot {
     private final CrudCityRepository repository;
+
+    @Value("${custom.bot.name}")
+    private String botName;
+
+    @Value("${custom.bot.token}")
+    private String botToken;
 
     private static final String START = "/start";
     private static final String HELP = "/help";
@@ -32,12 +39,12 @@ public class OtsTravelBot extends TelegramLongPollingBot {
 
     @Override
     public String getBotUsername() {
-        return System.getenv("BotUserName");
+        return botName;
     }
 
     @Override
     public String getBotToken() {
-        return System.getenv("BotToken");
+        return botToken;
     }
 
     @Override

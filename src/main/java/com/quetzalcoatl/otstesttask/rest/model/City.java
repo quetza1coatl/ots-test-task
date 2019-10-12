@@ -2,6 +2,7 @@ package com.quetzalcoatl.otstesttask.rest.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -16,7 +17,7 @@ public class City {
     @Column(unique = true)
     private String name;
 
-    @NotBlank(message = "Must not be null or empty")
+    @NotNull(message = "Must not be null")
     @Size(min = 5, max = 1000)
     private String description;
 

@@ -4,7 +4,7 @@ DROP SEQUENCE hibernate_sequence
 IF EXISTS;
 
 CREATE SEQUENCE hibernate_sequence
-  START WITH 10
+  START WITH 5
   INCREMENT BY 1;
 
 CREATE TABLE cities (
