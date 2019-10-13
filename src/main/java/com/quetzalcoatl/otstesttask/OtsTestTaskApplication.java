@@ -10,7 +10,6 @@ public class OtsTestTaskApplication {
 	public static void main(String[] args) {
         ApiContextInitializer.init();
 		SpringApplication.run(OtsTestTaskApplication.class, args);
-
 	}
 
 }

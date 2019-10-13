@@ -57,7 +57,6 @@ public class RestExceptionHandler {
         return new ErrorInfo(req.getRequestURL(), cause);
     }
 
-
     // Other errors
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)

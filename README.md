@@ -1,7 +1,7 @@
 
 ## Telegram bot with RESTful management.
 
-### Desciption
+### Description
 The application consist of two parts:  
 - Telegram bot: provides recommendations and information about tourist attractions in the selected city;  
 - REST API: allows you to manage data.  
@@ -25,6 +25,7 @@ Root URL: `localhost:8080/rest/cities`
 `URL` - root URL  
 `Method` - POST  
 `Data params` - {"name": "[string_notEmpty_notNull_unique]","description": "[string_notNull_sizeFrom5To1000]"}  
+`Headers` - Content-Type = application/json  
 `Success response` - 201 Created. Content (example):  
 {"id": 5,"name": "city_name","description": "city_description"}  
 `Error response` - 409 Conflict (unique constraint violation), 422 Unprocessable Entity (validation errors)  
@@ -33,6 +34,7 @@ Root URL: `localhost:8080/rest/cities`
 `Method` PUT  
 `Data params` - 
 {"id":[id_equals_to_url_path_variable],"name": "[string_notEmpty_notNull_unique]","description": "[string_notNull_sizeFrom5To1000]"}  
+`Headers` - Content-Type = application/json  
 `Success response` - 204 No Content.  
 `Error response` - 400 Bad Request (Mismatch id or id is not presented in a body),
  422 Unprocessable Entity (validation errors, not found entity)  
